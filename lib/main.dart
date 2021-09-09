@@ -15,7 +15,8 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     var questions = [
       'What\'s your Favorite Color?',
-      'Whats\'s your favorite animal?'
+      'What\'s your favorite animal?',
+      'What\'s your favorite Group Band?',
     ];
     // TODO: implement build
     return MaterialApp(
@@ -25,18 +26,20 @@ class MyApp extends StatelessWidget {
         ),
         body: Column(
           children: [
-            Text('The Question!'),
+            Text(
+              questions.elementAt(0),
+            ),
             RaisedButton(
               child: Text('Answer 1'),
               onPressed: answerQuestion,
             ),
             RaisedButton(
               child: Text('Answer 2'),
-              onPressed: answerQuestion,
+              onPressed: () => print("Chossen Answer 2"),
             ),
             RaisedButton(
               child: Text('Answer 3'),
-              onPressed: answerQuestion,
+              onPressed: () => print("Chossen Answer 3"),
             ),
           ],
         ),
