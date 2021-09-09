@@ -1,38 +1,44 @@
 import 'package:flutter/material.dart';
 
-void main() {
-  runApp(MyApp());
-}
+// void main() {
+//   runApp(MyApp());
+// }
+
+void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
+  void answerQuestion() {
+    print('Answer Chossen!');
+  }
+
   @override
   Widget build(BuildContext context) {
+    var questions = [
+      'What\'s your Favorite Color?',
+      'Whats\'s your favorite animal?'
+    ];
     // TODO: implement build
     return MaterialApp(
       home: Scaffold(
-        body: SafeArea(
-          child: Container(
-            child: Column(
-              children: [
-                Container(
-                  width: double.infinity,
-                  height: 100,
-                  color: Colors.red,
-                  alignment: Alignment.centerRight,
-                  child: FlutterLogo(),
-                ),
-                Container(
-                  child: Column(
-                    children: [
-                      Text('Data 1'),
-                      Text('Data 2'),
-                      Text('Data 3'),
-                    ],
-                  ),
-                )
-              ],
+        appBar: AppBar(
+          title: Text('Testing'),
+        ),
+        body: Column(
+          children: [
+            Text('The Question!'),
+            RaisedButton(
+              child: Text('Answer 1'),
+              onPressed: answerQuestion,
             ),
-          ),
+            RaisedButton(
+              child: Text('Answer 2'),
+              onPressed: answerQuestion,
+            ),
+            RaisedButton(
+              child: Text('Answer 3'),
+              onPressed: answerQuestion,
+            ),
+          ],
         ),
       ),
     );
