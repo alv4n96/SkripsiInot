@@ -7,8 +7,10 @@ import 'package:flutter/material.dart';
 void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
+  int indexQuestion = 0;
   void answerQuestion() {
     print('Answer Chossen!');
+    indexQuestion = indexQuestion + 1;
   }
 
   @override
@@ -18,6 +20,7 @@ class MyApp extends StatelessWidget {
       'What\'s your favorite animal?',
       'What\'s your favorite Group Band?',
     ];
+
     // TODO: implement build
     return MaterialApp(
       home: Scaffold(
@@ -27,7 +30,8 @@ class MyApp extends StatelessWidget {
         body: Column(
           children: [
             Text(
-              questions.elementAt(0),
+              // questions.elementAt(0),
+              questions[indexQuestion],
             ),
             RaisedButton(
               child: Text('Answer 1'),
@@ -37,9 +41,12 @@ class MyApp extends StatelessWidget {
               child: Text('Answer 2'),
               onPressed: () => print("Chossen Answer 2"),
             ),
-            RaisedButton(
-              child: Text('Answer 3'),
-              onPressed: () => print("Chossen Answer 3"),
+            Padding(
+              padding: const EdgeInsets.all(10.0),
+              child: RaisedButton(
+                child: Text('Answer 3'),
+                onPressed: () => print("Chossen Answer 3"),
+              ),
             ),
           ],
         ),
