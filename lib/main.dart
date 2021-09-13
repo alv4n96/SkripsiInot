@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:skripsi_toni/questions.dart';
 
 // void main() {
 //   runApp(MyApp());
@@ -8,13 +9,11 @@ void main() => runApp(MyApp());
 
 class MyApp extends StatefulWidget {
   @override
-  State<StatefulWidget> createState() {
-    return myAppState();
-  }
+  State<StatefulWidget> createState() => _MyAppState();
 }
 
-class myAppState extends State<MyApp> {
-  int indexQuestion = 0;
+class _MyAppState extends State<MyApp> {
+  int _indexQuestion = 0;
   var questions = [
     'What\'s your Favorite XXXAA?',
     'What\'s your favorite AAXXAA?',
@@ -23,15 +22,14 @@ class myAppState extends State<MyApp> {
 
   void answerQuestion() {
     setState(() {
-      if (indexQuestion < questions.length - 1) {
-        print('pertanyaan ke - ${indexQuestion + 1}');
-        indexQuestion += 1;
+      if (_indexQuestion < questions.length - 1) {
+        print('Pertanyaan ke - ${_indexQuestion + 1}');
+        _indexQuestion += 1;
       } else {
-        print('Pertanyaan ke - ${indexQuestion + 1} tidak ada');
-        indexQuestion = 0;
+        print('Pertanyaan ke - ${_indexQuestion + 1} tidak ada');
+        _indexQuestion = 0;
       }
     });
-    print(indexQuestion);
   }
 
   @override
@@ -44,9 +42,9 @@ class myAppState extends State<MyApp> {
         ),
         body: Column(
           children: [
-            Text(
+            Questions(
               // questions.elementAt(0),
-              questions[indexQuestion],
+              questions[_indexQuestion],
             ),
             RaisedButton(
               child: Text('Answer 1'),
@@ -56,12 +54,9 @@ class myAppState extends State<MyApp> {
               child: Text('Answer 2'),
               onPressed: () => print("Chossen Answer 2"),
             ),
-            Padding(
-              padding: const EdgeInsets.all(10.0),
-              child: RaisedButton(
-                child: Text('Answer 3'),
-                onPressed: () => print("Chossen Answer 3"),
-              ),
+            RaisedButton(
+              child: Text('Answer 3'),
+              onPressed: () => print("Chossen Answer 3"),
             ),
           ],
         ),
