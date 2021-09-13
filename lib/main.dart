@@ -6,21 +6,36 @@ import 'package:flutter/material.dart';
 
 void main() => runApp(MyApp());
 
-class MyApp extends StatelessWidget {
+class MyApp extends StatefulWidget {
+  @override
+  State<StatefulWidget> createState() {
+    return myAppState();
+  }
+}
+
+class myAppState extends State<MyApp> {
   int indexQuestion = 0;
+  var questions = [
+    'What\'s your Favorite XXXAA?',
+    'What\'s your favorite AAXXAA?',
+    'What\'s your favorite AASSAAX?',
+  ];
+
   void answerQuestion() {
-    print('Answer Chossen!');
-    indexQuestion = indexQuestion + 1;
+    setState(() {
+      if (indexQuestion < questions.length - 1) {
+        print('pertanyaan ke - ${indexQuestion + 1}');
+        indexQuestion += 1;
+      } else {
+        print('Pertanyaan ke - ${indexQuestion + 1} tidak ada');
+        indexQuestion = 0;
+      }
+    });
+    print(indexQuestion);
   }
 
   @override
   Widget build(BuildContext context) {
-    var questions = [
-      'What\'s your Favorite Color?',
-      'What\'s your favorite animal?',
-      'What\'s your favorite Group Band?',
-    ];
-
     // TODO: implement build
     return MaterialApp(
       home: Scaffold(
