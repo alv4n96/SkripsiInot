@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:skripsi_toni/questions.dart';
+import './questions.dart';
+import './answer.dart';
 
 // void main() {
 //   runApp(MyApp());
@@ -46,18 +47,9 @@ class _MyAppState extends State<MyApp> {
               // questions.elementAt(0),
               questions[_indexQuestion],
             ),
-            RaisedButton(
-              child: Text('Answer 1'),
-              onPressed: answerQuestion,
-            ),
-            RaisedButton(
-              child: Text('Answer 2'),
-              onPressed: () => print("Chossen Answer 2"),
-            ),
-            RaisedButton(
-              child: Text('Answer 3'),
-              onPressed: () => print("Chossen Answer 3"),
-            ),
+            Answer(answerQuestion),
+            Answer(answerQuestion),
+            Answer(answerQuestion),
           ],
         ),
       ),
