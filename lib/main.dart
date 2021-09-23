@@ -16,9 +16,18 @@ class MyApp extends StatefulWidget {
 class _MyAppState extends State<MyApp> {
   int _indexQuestion = 0;
   var questions = [
-    'Siapa namanya Ipan?',
-    'Siapa pacarnya Bejo?',
-    'Bagaimana keadaanya alvan?',
+    {
+      'questionText': 'Siapa depannya namanya Ipan?',
+      'answers': ['Muhammad', 'Matovani', 'Ainur', 'Rahma']
+    },
+    {
+      'questionText': 'Apa Warna kesukaan ku?',
+      'answers': ['Merah', 'Biru', 'Hijau', 'Kuning']
+    },
+    {
+      'questionText': 'Bulan apa aku lahir?',
+      'answers': ['Maret', 'Mei', 'Oktober', 'September']
+    },
   ];
 
   void answerQuestion() {
