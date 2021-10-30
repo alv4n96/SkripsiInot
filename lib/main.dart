@@ -85,18 +85,19 @@ class _MyAppState extends State<MyApp> {
                           onPressed: () {
                             return "Test";
                           },
-                          child: const Text(
+                          child: Text(
                             "BUKA",
                             style: TextStyle(
                               fontSize: 25,
                               fontWeight: FontWeight.bold,
                               letterSpacing: 4,
+                              color: Colors.lightBlue.shade900,
                             ),
                           ),
                           style: ElevatedButton.styleFrom(
-                              primary: Colors.lightBlue.shade800,
+                              primary: Colors.blue.shade400,
                               side: BorderSide(
-                                width: 1,
+                                width: 3,
                                 color: Colors.blue.shade900,
                               ),
                               shape: RoundedRectangleBorder(
