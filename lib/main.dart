@@ -1,65 +1,93 @@
-import 'package:flutter/material.dart';
-import './questions.dart';
-import './answer.dart';
+import 'dart:math';
 
-// void main() {
-//   runApp(MyApp());
-// }
+import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 
 void main() => runApp(MyApp());
 
 class MyApp extends StatefulWidget {
   @override
-  State<StatefulWidget> createState() => _MyAppState();
+  _MyAppState createState() => _MyAppState();
 }
 
 class _MyAppState extends State<MyApp> {
-  int _indexQuestion = 0;
-  var questions = [
-    {
-      'questionText': 'Siapa depannya namanya Ipan?',
-      'answers': ['Muhammad', 'Matovani', 'Ainur', 'Rahma']
-    },
-    {
-      'questionText': 'Apa Warna kesukaan ku?',
-      'answers': ['Merah', 'Biru', 'Hijau', 'Kuning']
-    },
-    {
-      'questionText': 'Bulan apa aku lahir?',
-      'answers': ['Maret', 'Mei', 'Oktober', 'September']
-    },
-  ];
-
-  void answerQuestion() {
-    setState(() {
-      if (_indexQuestion < questions.length - 1) {
-        print('Pertanyaan ke - ${_indexQuestion + 1}');
-        _indexQuestion += 1;
-      } else {
-        print('Pertanyaan ke - ${_indexQuestion + 1} tidak ada');
-        _indexQuestion = 0;
-      }
-    });
-  }
+  int counter = 1;
 
   @override
   Widget build(BuildContext context) {
-    // TODO: implement build
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       home: Scaffold(
-        appBar: AppBar(
-          title: Text('Testing'),
-        ),
-        body: Column(
-          children: [
-            Questions(
-              // questions.elementAt(0),
-              questions[_indexQuestion],
-            ),
-            Answer(answerQuestion),
-            Answer(answerQuestion),
-            Answer(answerQuestion),
-          ],
+        body: Container(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              // Atas
+              Row(
+                mainAxisAlignment: MainAxisAlignment.end,
+                children: [
+                  Padding(
+                    padding: EdgeInsets.only(top: 50, right: 25),
+                    child: Text(
+                      counter.toString(),
+                      style: TextStyle(
+                        fontSize: 20 + double.parse(counter.toString()),
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+              // Tengah
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: [
+                  RaisedButton(
+                    onPressed: () {
+                      setState(() {
+                        if (counter != 1) {
+                          counter--;
+                        }
+                      });
+                    },
+                    child: Icon(Icons.remove),
+                  ),
+                  RaisedButton(
+                    onPressed: () {
+                      setState(() {
+                        counter = 1;
+                      });
+                    },
+                    child: Icon(Icons.refresh),
+                  ),
+                  RaisedButton(
+                    onPressed: () {
+                      setState(() {
+                        if (counter < 211) {
+                          counter++;
+                        }
+                      });
+                    },
+                    child: Icon(Icons.add),
+                  )
+                ],
+              ),
+              // Bawah
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: [
+                  Padding(
+                    padding: EdgeInsets.only(bottom: 50),
+                    child: Column(
+                      children: [
+                        ElevatedButton(
+                            onPressed: () {}, child: const Text('I gotta pee')),
+                      ],
+                    ),
+                  ),
+                ],
+              )
+            ],
+          ),
         ),
       ),
     );
