@@ -1,7 +1,6 @@
-import 'dart:math';
-
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_progress_button/flutter_progress_button.dart';
 
 void main() => runApp(MyApp());
 
@@ -19,6 +18,10 @@ class _MyAppState extends State<MyApp> {
       debugShowCheckedModeBanner: false,
       home: Scaffold(
         body: Container(
+          decoration: BoxDecoration(
+            image: DecorationImage(
+                image: AssetImage("src/img/background.png"), fit: BoxFit.cover),
+          ),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
@@ -27,48 +30,46 @@ class _MyAppState extends State<MyApp> {
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: [
                   Padding(
-                    padding: EdgeInsets.only(top: 50, right: 25),
-                    child: Text(
-                      counter.toString(),
-                      style: TextStyle(
-                        fontSize: 20 + double.parse(counter.toString()),
-                      ),
-                    ),
-                  ),
+                      padding: EdgeInsets.only(top: 50, right: 25),
+                      child: Container(
+                        width: 100,
+                        height: 100,
+                        // color: Colors.blueAccent,
+                        child: Image(
+                          image: AssetImage("src/img/landingPage/logo_UM.png"),
+                        ),
+                      )),
                 ],
               ),
               // Tengah
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
+              Column(
+                mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  RaisedButton(
-                    onPressed: () {
-                      setState(() {
-                        if (counter != 1) {
-                          counter--;
-                        }
-                      });
-                    },
-                    child: Icon(Icons.remove),
+                  Container(
+                    width: 300.0,
+                    height: 120.0,
+                    decoration: BoxDecoration(
+                      image: DecorationImage(
+                        image: AssetImage("src/img/landingPage/wallpaper.jpg"),
+                        fit: BoxFit.cover,
+                      ),
+                      color: Colors.blueAccent,
+                      borderRadius: BorderRadius.all(Radius.circular(25.0)),
+                    ),
                   ),
-                  RaisedButton(
-                    onPressed: () {
-                      setState(() {
-                        counter = 1;
-                      });
-                    },
-                    child: Icon(Icons.refresh),
+                  Padding(
+                    padding: EdgeInsets.only(top: 10),
+                    child: Text(
+                      "PERANG DUNIA II",
+                      style: TextStyle(
+                        fontSize: 30,
+                        fontWeight: FontWeight.bold,
+                        letterSpacing: 2,
+                        fontFamily: 'Stick',
+                        color: Colors.white,
+                      ),
+                    ),
                   ),
-                  RaisedButton(
-                    onPressed: () {
-                      setState(() {
-                        if (counter < 211) {
-                          counter++;
-                        }
-                      });
-                    },
-                    child: Icon(Icons.add),
-                  )
                 ],
               ),
               // Bawah
@@ -76,14 +77,32 @@ class _MyAppState extends State<MyApp> {
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
                   Padding(
-                    padding: EdgeInsets.only(bottom: 50),
-                    child: Column(
-                      children: [
-                        ElevatedButton(
-                            onPressed: () {}, child: const Text('I gotta pee')),
-                      ],
-                    ),
-                  ),
+                      padding: EdgeInsets.only(bottom: 70),
+                      child: SizedBox(
+                        width: 250,
+                        height: 60,
+                        child: ElevatedButton(
+                          onPressed: () {
+                            return "Test";
+                          },
+                          child: const Text(
+                            "BUKA",
+                            style: TextStyle(
+                              fontSize: 25,
+                              fontWeight: FontWeight.bold,
+                              letterSpacing: 4,
+                            ),
+                          ),
+                          style: ElevatedButton.styleFrom(
+                              primary: Colors.lightBlue.shade800,
+                              side: BorderSide(
+                                width: 1,
+                                color: Colors.blue.shade900,
+                              ),
+                              shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(25))),
+                        ),
+                      )),
                 ],
               )
             ],
