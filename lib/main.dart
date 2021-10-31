@@ -1,8 +1,13 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_progress_button/flutter_progress_button.dart';
+import 'mainPage.dart';
 
-void main() => runApp(MyApp());
+void main() {
+  runApp(MaterialApp(
+    title: 'Your title',
+    home: MyApp(),
+  ));
+}
 
 class MyApp extends StatefulWidget {
   @override
@@ -10,8 +15,6 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
-  int counter = 1;
-
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -30,7 +33,7 @@ class _MyAppState extends State<MyApp> {
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: [
                   Padding(
-                      padding: EdgeInsets.only(top: 50, right: 25),
+                      padding: EdgeInsets.only(top: 25, right: 15),
                       child: Container(
                         width: 100,
                         height: 100,
@@ -45,45 +48,57 @@ class _MyAppState extends State<MyApp> {
               Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Container(
-                    width: 300.0,
-                    height: 120.0,
-                    decoration: BoxDecoration(
-                      image: DecorationImage(
-                        image: AssetImage("src/img/landingPage/wallpaper.jpg"),
-                        fit: BoxFit.cover,
-                      ),
-                      color: Colors.blueAccent,
-                      borderRadius: BorderRadius.all(Radius.circular(25.0)),
-                    ),
-                  ),
                   Padding(
-                    padding: EdgeInsets.only(top: 10),
-                    child: Text(
-                      "PERANG DUNIA II",
-                      style: TextStyle(
-                        fontSize: 30,
-                        fontWeight: FontWeight.bold,
-                        letterSpacing: 2,
-                        fontFamily: 'Stick',
-                        color: Colors.white,
-                      ),
-                    ),
-                  ),
+                      padding: EdgeInsets.only(bottom: 5),
+                      child: Column(
+                        children: [
+                          Container(
+                            width: 300.0,
+                            height: 120.0,
+                            decoration: BoxDecoration(
+                              image: DecorationImage(
+                                image: AssetImage(
+                                    "src/img/landingPage/wallpaper.jpg"),
+                                fit: BoxFit.cover,
+                              ),
+                              color: Colors.blueAccent,
+                              borderRadius:
+                                  BorderRadius.all(Radius.circular(50.0)),
+                            ),
+                          ),
+                          Padding(
+                            padding: EdgeInsets.only(top: 10),
+                            child: Text(
+                              "PERANG DUNIA II",
+                              style: TextStyle(
+                                fontSize: 30,
+                                fontWeight: FontWeight.bold,
+                                letterSpacing: 2,
+                                fontFamily: 'Stick',
+                                color: Colors.white,
+                              ),
+                            ),
+                          ),
+                        ],
+                      )),
                 ],
               ),
               // Bawah
               Row(
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Padding(
-                      padding: EdgeInsets.only(bottom: 70),
+                      padding: EdgeInsets.only(bottom: 150),
                       child: SizedBox(
                         width: 250,
                         height: 60,
                         child: ElevatedButton(
                           onPressed: () {
-                            return "Test";
+                            //right way: use context in below level tree with MaterialApp
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => MainScreen()));
                           },
                           child: Text(
                             "BUKA",
