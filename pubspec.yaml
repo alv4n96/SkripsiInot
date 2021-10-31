@@ -21,6 +21,7 @@ environment:
   sdk: ">=2.11.0 <3.0.0"
 
 dependencies:
+  material_design_icons_flutter:
   flutter:
     sdk: flutter
 
@@ -49,6 +50,7 @@ flutter:
   assets:
     - src/img/landingPage/logo_UM.png
     - src/img/landingPage/wallpaper.jpg
+    - src/img/mainScreen/AbdulMuis.jpg
     - src/img/background.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
