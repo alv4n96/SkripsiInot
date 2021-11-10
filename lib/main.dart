@@ -5,7 +5,7 @@ import 'mainScreen.dart';
 void main() {
   runApp(MaterialApp(
     title: 'Your title',
-    home: MyApp(),
+    home: MainScreen(),
   ));
 }
 
@@ -88,37 +88,39 @@ class _MyAppState extends State<MyApp> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Padding(
-                      padding: EdgeInsets.only(bottom: 150),
-                      child: SizedBox(
-                        width: 250,
-                        height: 60,
-                        child: ElevatedButton(
-                          onPressed: () {
-                            //right way: use context in below level tree with MaterialApp
-                            Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (context) => MainScreen()));
-                          },
-                          child: Text(
-                            "BUKA",
-                            style: TextStyle(
-                              fontSize: 25,
-                              fontWeight: FontWeight.bold,
-                              letterSpacing: 4,
-                              color: Colors.lightBlue.shade900,
-                            ),
+                    padding: EdgeInsets.only(bottom: 150),
+                    child: SizedBox(
+                      width: 250,
+                      height: 60,
+                      child: ElevatedButton(
+                        onPressed: () {
+                          //right way: use context in below level tree with MaterialApp
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => MainScreen()));
+                        },
+                        child: Text(
+                          "BUKA",
+                          style: TextStyle(
+                            fontSize: 30,
+                            fontWeight: FontWeight.bold,
+                            fontFamily: 'Jaapokki',
+                            letterSpacing: 5,
+                            color: Colors.lightBlue.shade900,
                           ),
-                          style: ElevatedButton.styleFrom(
-                              primary: Colors.blue.shade400,
-                              side: BorderSide(
-                                width: 3,
-                                color: Colors.blue.shade900,
-                              ),
-                              shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(25))),
                         ),
-                      )),
+                        style: ElevatedButton.styleFrom(
+                            primary: Colors.blue.shade400,
+                            side: BorderSide(
+                              width: 3,
+                              color: Colors.blue.shade900,
+                            ),
+                            shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(25))),
+                      ),
+                    ),
+                  ),
                 ],
               )
             ],
