@@ -5,7 +5,7 @@ import 'mainScreen.dart';
 void main() {
   runApp(MaterialApp(
     title: 'Your title',
-    home: MainScreen(),
+    home: MyApp(),
   ));
 }
 

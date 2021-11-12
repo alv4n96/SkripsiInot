@@ -1,7 +1,9 @@
 import 'dart:convert';
 
 import 'package:flutter/material.dart';
+import 'package:skripsi_toni/KIKD.dart';
 import 'package:skripsi_toni/main.dart';
+import 'package:skripsi_toni/instructionScreen.dart';
 
 class MainScreen extends StatelessWidget {
   @override
@@ -66,12 +68,12 @@ class MainScreen extends StatelessWidget {
                   MenuButton(
                     label: "PETUNJUK PENGGUNAAN",
                     screenWidth: screenWidht,
-                    targetScene: MyApp(),
+                    targetScene: InstructionPage(),
                   ),
                   MenuButton(
                     label: "KI/KD",
                     screenWidth: screenWidht,
-                    targetScene: MyApp(),
+                    targetScene: KIKDPage(),
                   ),
                   MenuButton(
                     label: "MATERI",
