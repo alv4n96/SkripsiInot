@@ -51,6 +51,12 @@ flutter:
     - src/img/landingPage/logo_UM.png
     - src/img/landingPage/wallpaper.jpg
     - src/img/mainScreen/bannerHero/AbdulMuis.jpg
+    - src/img/mainScreen/bannerHero/1.jpg
+    - src/img/mainScreen/bannerHero/2.jpg
+    - src/img/mainScreen/bannerHero/3.jpg
+    - src/img/mainScreen/bannerHero/4.jpg
+    - src/img/mainScreen/bannerHero/5.jpg
+    - src/img/mainScreen/bannerHero/6.jpg
     - src/img/mainScreen/header/logo.png
     - src/img/background.png
     - src/img/BAKGRUND.jpg

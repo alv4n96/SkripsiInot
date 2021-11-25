@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:skripsi_toni/KIKD.dart';
 import 'package:skripsi_toni/main.dart';
 import 'package:skripsi_toni/instructionScreen.dart';
+import 'package:skripsi_toni/widget.dart';
 
 class MainScreen extends StatelessWidget {
   @override
@@ -53,16 +54,19 @@ class MainScreen extends StatelessWidget {
                     ],
                   ),
                   Container(
-                    width: screenWidht / .5,
+                    width: screenWidht / 1,
                     height: screenWidht * 9 / 20,
                     child: PageView(
                         controller: PageController(
                             viewportFraction: 0.8, initialPage: 1),
                         scrollDirection: Axis.horizontal,
                         children: [
+                          BannerWidgetArea(numberHeroes: 0),
                           BannerWidgetArea(numberHeroes: 1),
                           BannerWidgetArea(numberHeroes: 2),
-                          BannerWidgetArea(numberHeroes: 0),
+                          BannerWidgetArea(numberHeroes: 3),
+                          BannerWidgetArea(numberHeroes: 4),
+                          BannerWidgetArea(numberHeroes: 5),
                         ]),
                   ),
                   MenuButton(
@@ -100,18 +104,22 @@ class MainScreen extends StatelessWidget {
   }
 }
 
-var bannerItems = ["Abdul Muis", "Abdul Muis", "Abdul Muis", "Abdul Muis"];
-var subLabelItems = [
-  "Pahlawan Nasional",
-  "Pahlawan Indonesia",
-  "Pahlawan Internasional",
-  "Pahlawan Aja"
+var bannerItems = [
+  "Adolf Hitler",
+  "Joseph Stallin",
+  "Benito Mussolini",
+  "Franklin Delano Roosevelt",
+  "Winston Churchill",
+  "Hideki Tojo",
 ];
+// var subLabelItems = [" ", " ", " ", " "];
 var bannerImages = [
-  "src/img/mainScreen/bannerHero/AbdulMuis.jpg",
-  "src/img/mainScreen/bannerHero/AbdulMuis.jpg",
-  "src/img/mainScreen/bannerHero/AbdulMuis.jpg",
-  "src/img/mainScreen/bannerHero/AbdulMuis.jpg",
+  "src/img/mainScreen/bannerHero/1.jpg",
+  "src/img/mainScreen/bannerHero/2.jpg",
+  "src/img/mainScreen/bannerHero/3.jpg",
+  "src/img/mainScreen/bannerHero/4.jpg",
+  "src/img/mainScreen/bannerHero/5.jpg",
+  "src/img/mainScreen/bannerHero/6.jpg",
 ];
 
 class BannerWidgetArea extends StatelessWidget {
@@ -170,67 +178,10 @@ class BannerWidgetArea extends StatelessWidget {
                     color: Colors.white,
                   ),
                 ),
-                Text(
-                  subLabelItems[this.numberHeroes],
-                  style: TextStyle(
-                    letterSpacing: 3,
-                    fontSize: 12.0,
-                    color: Colors.white,
-                  ),
-                )
               ],
             ),
           ),
         ],
-      ),
-    );
-  }
-}
-
-class MenuButton extends StatelessWidget {
-  final double screenWidth;
-  final String label;
-  final Widget targetScene;
-
-  const MenuButton({
-    Key key,
-    @required this.screenWidth,
-    @required this.label,
-    @required this.targetScene,
-  }) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Padding(
-      padding: EdgeInsets.fromLTRB(20, 10, 20, 10),
-      child: SizedBox(
-        width: this.screenWidth,
-        height: 60,
-        child: ElevatedButton(
-          onPressed: () {
-            //right way: use context in below level tree with MaterialApp
-            Navigator.push(context,
-                MaterialPageRoute(builder: (context) => this.targetScene));
-          },
-          child: Text(
-            this.label,
-            style: TextStyle(
-              fontSize: 20,
-              fontWeight: FontWeight.bold,
-              fontFamily: 'Jaapokki',
-              letterSpacing: 5,
-              color: Colors.lightBlue.shade900,
-            ),
-          ),
-          style: ElevatedButton.styleFrom(
-              primary: Colors.blue.shade400,
-              side: BorderSide(
-                width: 3,
-                color: Colors.blue.shade900,
-              ),
-              shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(25))),
-        ),
       ),
     );
   }
