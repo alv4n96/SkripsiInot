@@ -1,105 +1,97 @@
+import 'dart:ui';
+
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:skripsi_toni/mainScreen.dart';
 import 'package:skripsi_toni/widget.dart';
 
-class KIKDPage extends StatelessWidget {
+class KIKDApp extends StatefulWidget {
+  @override
+  KIKDAppState createState() => KIKDAppState();
+}
+
+class KIKDAppState extends State<KIKDApp> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: SafeArea(
-        child: Container(
-          child: CustomScrollView(
-            slivers: <Widget>[
-              SliverAppBar(
-                backgroundColor: Colors.blue,
-                expandedHeight: MediaQuery.of(context).size.height * 0.5,
-                flexibleSpace: Container(
-                  height: MediaQuery.of(context).size.height * 0.5,
-                  color: Colors.blue,
-                  child: Stack(
-                    children: <Widget>[
-                      Positioned(
-                        top: 10,
-                        left: 13,
-                        height: 35,
-                        child: Container(
-                          width: 32,
-                          height: 32,
-                          decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(5),
-                              color: Colors.blue.shade300),
-                        ),
-                      ),
-                      Align(
-                        child: Container(
-                          alignment: Alignment.bottomCenter,
-                          margin: EdgeInsets.only(top: 70),
-                          width: 172,
-                          decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(10),
-                              image: DecorationImage(
-                                  image: AssetImage(
-                                      "src/img/mainScreen/bannerHero/1.jpg"))),
-                        ),
-                      )
-                    ],
-                  ),
+    return DefaultTabController(
+      length: 2,
+      child: Scaffold(
+        appBar: AppBar(
+          centerTitle: true,
+          title: Text(
+            "",
+            style: TextStyle(color: Colors.black),
+          ),
+          backgroundColor: Colors.blue,
+          leading: IconButton(
+            onPressed: () {
+              //right way: use context in below level tree with MaterialApp
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => MainScreen()));
+            },
+            icon: Icon(
+              Icons.arrow_back_ios_sharp,
+              color: Colors.white,
+            ),
+          ),
+        ),
+        body: TabBarView(
+          children: <Widget>[
+            HomeTopTabs(),
+            HomeTopTabs(),
+          ],
+        ),
+      ),
+    );
+  }
+
+  HomeTopTabs() {
+    return DefaultTabController(
+      length: 2,
+      child: Scaffold(
+        appBar: AppBar(
+          toolbarHeight: 65,
+          backgroundColor: Colors.white,
+          bottom: TabBar(
+            isScrollable: true,
+            indicatorWeight: 8.0,
+            indicatorColor: Colors.blue,
+            unselectedLabelColor: Colors.black,
+            tabs: <Widget>[
+              Tab(
+                child: Text(
+                  'Kompetensi Inti',
+                  style: TextStyle(color: Colors.black),
                 ),
               ),
-              SliverList(
-                  delegate: SliverChildListDelegate(<Widget>[
-                // Judul
-                Padding(
-                  padding: EdgeInsets.only(top: 24, left: 25),
-                  // TITLE
-                  child: Text(
-                    '''Kompetensi Inti & 
-                    Kompetensi Dasar''',
-                    style: TextStyle(
-                        fontSize: 25,
-                        color: Colors.black,
-                        // fontWeight: FontWeight.w600,
-                        fontFamily: 'Jaapokki'),
-                  ),
+              Tab(
+                child: Text(
+                  'Kompetensi Dasar',
+                  style: TextStyle(color: Colors.black),
                 ),
-                Container(
-                  height: 28,
-                  margin: EdgeInsets.only(top: 23, bottom: 36),
-                  padding: EdgeInsets.only(left: 25),
-                  child: DefaultTabController(
-                    length: 2,
-                    child: TabBar(
-                      labelPadding: EdgeInsets.all(0),
-                      indicatorPadding: EdgeInsets.all(0),
-                      isScrollable: true,
-                      labelColor: Colors.black,
-                      unselectedLabelColor: Colors.grey,
-                      labelStyle: TextStyle(
-                        fontSize: 14,
-                        fontWeight: FontWeight.w700,
-                      ),
-                      unselectedLabelStyle: TextStyle(
-                        fontSize: 12,
-                        fontWeight: FontWeight.w600,
-                      ),
-                      indicator: RoundedRectangleTabIndicator(
-                          color: Colors.black, weight: 2, width: 30),
-                      tabs: <Widget>[
-                        tabTitle(title: "Kompetensi Inti"),
-                        tabTitle(title: "Kompetensi Dasar"),
-                      ],
-                    ),
-                  ),
-                ),
-                Container(
-                  child: TabBarView(children: <Widget>[
-                    KIScreen(),
-                    KIScreen(),
-                  ]),
-                )
-                // content
-              ]))
+              ),
             ],
           ),
+        ),
+        body: TabBarView(
+          children: <Widget>[
+            buildText(theText: '''
+    
+1.	Menghayati dan mengamalkan ajaran agama yang dianut.
+    
+2.	Menghayati dan mengamalkan perilaku jujur, disiplin, santun, peduli (gotong royong, kerjasama, toleran, damai), bertanggung jawab, responsif, dan pro-aktif dalam berinteraksi secara efektif sesuai dengan perkembangan anak di lingkungan, keluarga, sekolah, masyarakat dan lingkungan alam sekitar, bangsa, negara, kawasan regional, dan kawasan internasional.
+    
+3.	Memahami, menerapkan, dan menganalisis pengetahuan faktual,  konseptual, prosedural, dan metakognitif berdasarkan rasa ingin tahunya tentang ilmu pengetahuan, teknologi, seni, budaya, dan humaniora dengan wawasan kemanusiaan, kebangsaan, kenegaraan, dan peradaban terkait penyebab fenomena dan kejadian, serta menerapkan pengetahuan prosedural pada bidang kajian yang spesifik sesuai dengan bakat dan minatnya untuk memecahkan masalah.
+    
+4.	Mengolah, menalar, dan menyaji dalam ranah konkret dan ranah abstrak terkait dengan pengembangan dari yang dipelajarinya di sekolah secara mandiri, bertindak secara efektif dan kreatif, serta mampu menggunakan metode sesuai kaidah keilmuan.
+            '''),
+            buildText(theText: '''
+
+3.6. Menganalisis pengaruh Perang Dunia I dan Perang Dunia II terhadap kehidupan politik global (LBB dan PBB) dalam bentuk tulisan dan/atau media lain.
+
+4.6. Menyajikan hasil analisis tentang pengaruh Perang Dunia I dan Perang Dunia II terhadap kehidupan politik global (LBB dan PBB) dalam bentuk tulisan dan/atau media lain.
+       '''),
+          ],
         ),
       ),
     );

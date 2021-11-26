@@ -1,27 +1,82 @@
 import 'package:flutter/material.dart';
+import 'package:skripsi_toni/widget.dart';
 
 class InstructionPage extends StatelessWidget {
   const InstructionPage({Key key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: Scaffold(
-        appBar: AppBar(
-            title: Text('Petunjuk Penggunaan'), // You can add title here
-            leading: new IconButton(
-              icon: new Icon(Icons.arrow_back_ios, color: Colors.white),
-              onPressed: () => Navigator.of(context).pop(),
-            ),
-            backgroundColor: Colors.blue.shade900),
-        body: SelectableText(
-          '''1. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+    return Scaffold(
+      body: SafeArea(
+        child: Container(
+          child: CustomScrollView(
+            slivers: <Widget>[
+              SliverAppBar(
+                backgroundColor: Colors.blue,
+                expandedHeight: MediaQuery.of(context).size.height * 0.1,
+                flexibleSpace: Container(
+                  height: MediaQuery.of(context).size.height * 0.5,
+                  color: Colors.blue,
+                  child: Stack(
+                    children: <Widget>[
+                      Positioned(
+                        top: 10,
+                        left: 13,
+                        height: 35,
+                        child: Container(
+                          width: 32,
+                          height: 10,
+                          decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(5),
+                              color: Colors.blue.shade300),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+              SliverList(
+                  delegate: SliverChildListDelegate(<Widget>[
+                // Judul
+                Padding(
+                  padding: EdgeInsets.only(top: 24, left: 25),
+                  // TITLE
+                  child: Text(
+                    '''Petunjuk Penggunaan''',
+                    style: TextStyle(
+                        fontSize: 25,
+                        color: Colors.black,
+                        // fontWeight: FontWeight.w600,
+                        fontFamily: 'Jaapokki'),
+                  ),
+                ),
+                buildText(theText: '''
 
-2.Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+1.	Menghayati dan mengamalkan ajaran agama yang dianut.
 
-3.Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-          ''',
-          style: TextStyle(letterSpacing: 2, fontSize: 20),
+3.	Memahami, menerapkan, dan menganalisis pengetahuan faktual,  konseptual, prosedural, dan metakognitif berdasarkan rasa ingin tahunya tentang ilmu pengetahuan, teknologi, seni, budaya, dan humaniora dengan wawasan kemanusiaan, kebangsaan, kenegaraan, dan peradaban terkait penyebab fenomena dan kejadian, serta menerapkan pengetahuan prosedural pada bidang kajian yang spesifik sesuai dengan bakat dan minatnya untuk memecahkan masalah.
+
+3.	Memahami, menerapkan, dan menganalisis pengetahuan faktual,  konseptual, prosedural, dan metakognitif berdasarkan rasa ingin tahunya tentang ilmu pengetahuan, teknologi, seni, budaya, dan humaniora dengan wawasan kemanusiaan, kebangsaan, kenegaraan, dan peradaban terkait penyebab fenomena dan kejadian, serta menerapkan pengetahuan prosedural pada bidang kajian yang spesifik sesuai dengan bakat dan minatnya untuk memecahkan masalah.
+
+3.	Memahami, menerapkan, dan menganalisis pengetahuan faktual,  konseptual, prosedural, dan metakognitif berdasarkan rasa ingin tahunya tentang ilmu pengetahuan, teknologi, seni, budaya, dan humaniora dengan wawasan kemanusiaan, kebangsaan, kenegaraan, dan peradaban terkait penyebab fenomena dan kejadian, serta menerapkan pengetahuan prosedural pada bidang kajian yang spesifik sesuai dengan bakat dan minatnya untuk memecahkan masalah.
+
+3.	Memahami, menerapkan, dan menganalisis pengetahuan faktual,  konseptual, prosedural, dan metakognitif berdasarkan rasa ingin tahunya tentang ilmu pengetahuan, teknologi, seni, budaya, dan humaniora dengan wawasan kemanusiaan, kebangsaan, kenegaraan, dan peradaban terkait penyebab fenomena dan kejadian, serta menerapkan pengetahuan prosedural pada bidang kajian yang spesifik sesuai dengan bakat dan minatnya untuk memecahkan masalah.
+
+3.	Memahami, menerapkan, dan menganalisis pengetahuan faktual,  konseptual, prosedural, dan metakognitif berdasarkan rasa ingin tahunya tentang ilmu pengetahuan, teknologi, seni, budaya, dan humaniora dengan wawasan kemanusiaan, kebangsaan, kenegaraan, dan peradaban terkait penyebab fenomena dan kejadian, serta menerapkan pengetahuan prosedural pada bidang kajian yang spesifik sesuai dengan bakat dan minatnya untuk memecahkan masalah.
+
+3.	Memahami, menerapkan, dan menganalisis pengetahuan faktual,  konseptual, prosedural, dan metakognitif berdasarkan rasa ingin tahunya tentang ilmu pengetahuan, teknologi, seni, budaya, dan humaniora dengan wawasan kemanusiaan, kebangsaan, kenegaraan, dan peradaban terkait penyebab fenomena dan kejadian, serta menerapkan pengetahuan prosedural pada bidang kajian yang spesifik sesuai dengan bakat dan minatnya untuk memecahkan masalah.
+
+3.	Memahami, menerapkan, dan menganalisis pengetahuan faktual,  konseptual, prosedural, dan metakognitif berdasarkan rasa ingin tahunya tentang ilmu pengetahuan, teknologi, seni, budaya, dan humaniora dengan wawasan kemanusiaan, kebangsaan, kenegaraan, dan peradaban terkait penyebab fenomena dan kejadian, serta menerapkan pengetahuan prosedural pada bidang kajian yang spesifik sesuai dengan bakat dan minatnya untuk memecahkan masalah.
+
+3.	Memahami, menerapkan, dan menganalisis pengetahuan faktual,  konseptual, prosedural, dan metakognitif berdasarkan rasa ingin tahunya tentang ilmu pengetahuan, teknologi, seni, budaya, dan humaniora dengan wawasan kemanusiaan, kebangsaan, kenegaraan, dan peradaban terkait penyebab fenomena dan kejadian, serta menerapkan pengetahuan prosedural pada bidang kajian yang spesifik sesuai dengan bakat dan minatnya untuk memecahkan masalah.
+
+3.	Memahami, menerapkan, dan menganalisis pengetahuan faktual,  konseptual, prosedural, dan metakognitif berdasarkan rasa ingin tahunya tentang ilmu pengetahuan, teknologi, seni, budaya, dan humaniora dengan wawasan kemanusiaan, kebangsaan, kenegaraan, dan peradaban terkait penyebab fenomena dan kejadian, serta menerapkan pengetahuan prosedural pada bidang kajian yang spesifik sesuai dengan bakat dan minatnya untuk memecahkan masalah.
+
+                ''')
+                // content
+              ]))
+            ],
+          ),
         ),
       ),
     );
