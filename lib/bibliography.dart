@@ -50,7 +50,7 @@ class bibliography extends StatelessWidget {
                         fontFamily: 'Jaapokki'),
                   ),
                 ),
-                buildText(theText: '''
+                BuildText(theText: '''
 
 
 Hermawan, Dkk. 2017. Sejarah XI Peminatan Ilmu-Ilmu Sosial. Jakarta: Yudhistira. 

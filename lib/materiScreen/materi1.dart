@@ -42,7 +42,9 @@ class materi1 extends StatelessWidget {
                   padding: EdgeInsets.only(top: 24, left: 25),
                   // TITLE
                   child: Text(
-                    '''LATAR BELAKANG PERANG DUNIA II''',
+                    '''LATAR BELAKANG PERANG DUNIA II
+                    ''',
+                    textAlign: TextAlign.center,
                     style: TextStyle(
                         fontSize: 25,
                         color: Colors.black,
@@ -50,35 +52,31 @@ class materi1 extends StatelessWidget {
                         fontFamily: 'Jaapokki'),
                   ),
                 ),
-                buildText(theText: '''
-
-
-
-Keadaan damai di Benua Eropa pasca Perang Dunia I berlangsung tidak lebih dari 15 tahun. Pada periode 1930-an keadaan politik dunia kembali memanas menyerupai kondisi politik pada 1900-1912, sebelum meletusnya PD I. Negara-negara yang pernah terlibat dalam PD I segera mempersiapkan diri untuk menghadapi perang yang mungkin terjadi. Latar belakang PD II sama dengan PD I, yaitu terbagi atas sebab umum dan sebab khusus. Hal-hal yang melatarbelakangi terjadinya PD II dapat digolongkan sebagai berikut:
-
-
-
-a.	Sebab Umum
-
+                BuildText(
+                    theText:
+                        '''Keadaan damai di Benua Eropa pasca Perang Dunia I berlangsung tidak lebih dari 15 tahun. Pada periode 1930-an keadaan politik dunia kembali memanas menyerupai kondisi politik pada 1900-1912, sebelum meletusnya PD I. Negara-negara yang pernah terlibat dalam PD I segera mempersiapkan diri untuk menghadapi perang yang mungkin terjadi. Latar belakang PD II sama dengan PD I, yaitu terbagi atas sebab umum dan sebab khusus. Hal-hal yang melatarbelakangi terjadinya PD II dapat digolongkan sebagai berikut:'''),
+                BuildText(theText: '''a.	Sebab Umum
 Sebab-sebab umum terjadinya Perang Dunia II antara lain.
-
 1.	Pertentangan antara paham liberalisme dan totaliterisme. Liberalisme memberikan kebebasan bagi warga negaranya sedangkan totaliterisme mengekang kebebasan warga negara.
 2.	Persekutuan mencari kawan.
 3.	Semangat untuk membalas dendam karena kekalahan dalam PD I.
 4.	Perlombaan senjata antar negara.
 5.	Pertentangan antar negara imperialis untuk memperebutkan daerah jajahan.
 6.	Kegagalan Liga Bangsa-Bangsa dalam mewujudkan perdamaian dunia.
-
-
+'''),
+                PictBuilder(
+                    image: "src/img/materi/1_1.jpg",
+                    label:
+                        '''Serangan Jepang ke pangkalan Angkatan Laut Amerika Serikat di Pearl Harbour
+Sumber: hhsclarionnews.com
+'''),
+                BuildText(theText: '''
 b.	Sebab Khusus
-
 Sebab khusus Perang Dunia II terjadi di dua kawasan yaitu kawasan Eropa dan kawasan Asia Pasifik. Berikut ini sebab-sebab khusus terjadinya PD II.
-
 1.	Di kawasan Asia Pasifik, penyerbuan Jepang terhadap pangkalan Angkatan Laut Amerika Serikat di Pearl Harbour tanggal 7 Desember 1941.
 2.	Di kawasan Eropa, serangan kilat yang dilakukan yang dilakukan Jerman atas Polandia pada tanggal 1 September 1939. Alasan penyerangan itu untuk merebut kembali kota Danziq. Dalam waktu singkat sebagian besar Polandia dikuasai Jerman. Uni Soviet yang merasa keamanannya terancam, segera menyerbu Polandia dari arah Timur. Pada tanggal 3 September 1939 Inggris dan Prancis menyatakan perang terhadap Jerman. 
+''')
 
-
-                ''')
                 // content
               ]))
             ],

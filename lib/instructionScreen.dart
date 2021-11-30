@@ -39,10 +39,11 @@ class InstructionPage extends StatelessWidget {
                   delegate: SliverChildListDelegate(<Widget>[
                 // Judul
                 Padding(
-                  padding: EdgeInsets.only(top: 24, left: 25),
+                  padding: EdgeInsets.only(top: 25, left: 25, bottom: 20),
                   // TITLE
                   child: Text(
                     '''Petunjuk Penggunaan''',
+                    textAlign: TextAlign.center,
                     style: TextStyle(
                         fontSize: 25,
                         color: Colors.black,
@@ -50,29 +51,31 @@ class InstructionPage extends StatelessWidget {
                         fontFamily: 'Jaapokki'),
                   ),
                 ),
-                buildText(theText: '''
+                BuildText(theText: '''
+1. Aktifkan data seluler atau nyalakan wifi smartphone
+                '''),
+                BuildText(theText: '''
+2. Pastikan jaringan terhubung
+'''),
+                BuildText(theText: '''
+3. Pastikan smartphone memiliki ruang yang cukup
+'''),
+                BuildText(theText: '''
+4. Install aplikasi.
+'''),
+                BuildText(theText: '''
+5. Baca dengan teliti teks yang sudah disediakan
+'''),
+                BuildText(theText: '''
+6. Pelajari apa yang telah termuat di aplikasi.
+'''),
+                BuildText(theText: '''
 
-1.	Menghayati dan mengamalkan ajaran agama yang dianut.
 
-3.	Memahami, menerapkan, dan menganalisis pengetahuan faktual,  konseptual, prosedural, dan metakognitif berdasarkan rasa ingin tahunya tentang ilmu pengetahuan, teknologi, seni, budaya, dan humaniora dengan wawasan kemanusiaan, kebangsaan, kenegaraan, dan peradaban terkait penyebab fenomena dan kejadian, serta menerapkan pengetahuan prosedural pada bidang kajian yang spesifik sesuai dengan bakat dan minatnya untuk memecahkan masalah.
+Selamat belajar 
 
-3.	Memahami, menerapkan, dan menganalisis pengetahuan faktual,  konseptual, prosedural, dan metakognitif berdasarkan rasa ingin tahunya tentang ilmu pengetahuan, teknologi, seni, budaya, dan humaniora dengan wawasan kemanusiaan, kebangsaan, kenegaraan, dan peradaban terkait penyebab fenomena dan kejadian, serta menerapkan pengetahuan prosedural pada bidang kajian yang spesifik sesuai dengan bakat dan minatnya untuk memecahkan masalah.
-
-3.	Memahami, menerapkan, dan menganalisis pengetahuan faktual,  konseptual, prosedural, dan metakognitif berdasarkan rasa ingin tahunya tentang ilmu pengetahuan, teknologi, seni, budaya, dan humaniora dengan wawasan kemanusiaan, kebangsaan, kenegaraan, dan peradaban terkait penyebab fenomena dan kejadian, serta menerapkan pengetahuan prosedural pada bidang kajian yang spesifik sesuai dengan bakat dan minatnya untuk memecahkan masalah.
-
-3.	Memahami, menerapkan, dan menganalisis pengetahuan faktual,  konseptual, prosedural, dan metakognitif berdasarkan rasa ingin tahunya tentang ilmu pengetahuan, teknologi, seni, budaya, dan humaniora dengan wawasan kemanusiaan, kebangsaan, kenegaraan, dan peradaban terkait penyebab fenomena dan kejadian, serta menerapkan pengetahuan prosedural pada bidang kajian yang spesifik sesuai dengan bakat dan minatnya untuk memecahkan masalah.
-
-3.	Memahami, menerapkan, dan menganalisis pengetahuan faktual,  konseptual, prosedural, dan metakognitif berdasarkan rasa ingin tahunya tentang ilmu pengetahuan, teknologi, seni, budaya, dan humaniora dengan wawasan kemanusiaan, kebangsaan, kenegaraan, dan peradaban terkait penyebab fenomena dan kejadian, serta menerapkan pengetahuan prosedural pada bidang kajian yang spesifik sesuai dengan bakat dan minatnya untuk memecahkan masalah.
-
-3.	Memahami, menerapkan, dan menganalisis pengetahuan faktual,  konseptual, prosedural, dan metakognitif berdasarkan rasa ingin tahunya tentang ilmu pengetahuan, teknologi, seni, budaya, dan humaniora dengan wawasan kemanusiaan, kebangsaan, kenegaraan, dan peradaban terkait penyebab fenomena dan kejadian, serta menerapkan pengetahuan prosedural pada bidang kajian yang spesifik sesuai dengan bakat dan minatnya untuk memecahkan masalah.
-
-3.	Memahami, menerapkan, dan menganalisis pengetahuan faktual,  konseptual, prosedural, dan metakognitif berdasarkan rasa ingin tahunya tentang ilmu pengetahuan, teknologi, seni, budaya, dan humaniora dengan wawasan kemanusiaan, kebangsaan, kenegaraan, dan peradaban terkait penyebab fenomena dan kejadian, serta menerapkan pengetahuan prosedural pada bidang kajian yang spesifik sesuai dengan bakat dan minatnya untuk memecahkan masalah.
-
-3.	Memahami, menerapkan, dan menganalisis pengetahuan faktual,  konseptual, prosedural, dan metakognitif berdasarkan rasa ingin tahunya tentang ilmu pengetahuan, teknologi, seni, budaya, dan humaniora dengan wawasan kemanusiaan, kebangsaan, kenegaraan, dan peradaban terkait penyebab fenomena dan kejadian, serta menerapkan pengetahuan prosedural pada bidang kajian yang spesifik sesuai dengan bakat dan minatnya untuk memecahkan masalah.
-
-3.	Memahami, menerapkan, dan menganalisis pengetahuan faktual,  konseptual, prosedural, dan metakognitif berdasarkan rasa ingin tahunya tentang ilmu pengetahuan, teknologi, seni, budaya, dan humaniora dengan wawasan kemanusiaan, kebangsaan, kenegaraan, dan peradaban terkait penyebab fenomena dan kejadian, serta menerapkan pengetahuan prosedural pada bidang kajian yang spesifik sesuai dengan bakat dan minatnya untuk memecahkan masalah.
-
-                ''')
+Good Luck ❤
+''')
                 // content
               ]))
             ],

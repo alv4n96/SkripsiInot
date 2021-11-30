@@ -30,6 +30,7 @@ dependencies:
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.2
   flutter_progress_button: '^0.6.2'
+  video_player: ^2.2.3
 
 dev_dependencies:
   flutter_test:
@@ -48,18 +49,13 @@ flutter:
 
   # To add assets to your application, add an assets section, like this:
   assets:
-    - src/img/landingPage/logo_UM.png
-    - src/img/landingPage/wallpaper.jpg
-    - src/img/mainScreen/bannerHero/AbdulMuis.jpg
-    - src/img/mainScreen/bannerHero/1.jpg
-    - src/img/mainScreen/bannerHero/2.jpg
-    - src/img/mainScreen/bannerHero/3.jpg
-    - src/img/mainScreen/bannerHero/4.jpg
-    - src/img/mainScreen/bannerHero/5.jpg
-    - src/img/mainScreen/bannerHero/6.jpg
-    - src/img/mainScreen/header/logo.png
-    - src/img/background.png
-    - src/img/BAKGRUND.jpg
+    - src/img/landingPage/
+    - src/img/mainScreen/bannerHero/
+    - src/img/mainScreen/header/
+    - src/img/
+    - src/img/gallery/
+    - src/img/materi/
+
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.

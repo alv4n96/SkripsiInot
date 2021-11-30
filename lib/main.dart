@@ -1,6 +1,5 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:skripsi_toni/KIKD.dart';
 import 'mainScreen.dart';
 
 void main() {
@@ -59,7 +58,7 @@ class _MyAppState extends State<MyApp> {
                             decoration: BoxDecoration(
                               image: DecorationImage(
                                 image: AssetImage(
-                                    "src/img/landingPage/wallpaper.jpg"),
+                                    "src/img/landingPage/wallpaper-lastest.jpg"),
                                 fit: BoxFit.cover,
                               ),
                               color: Colors.blueAccent,

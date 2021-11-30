@@ -60,7 +60,7 @@ class josephStallin extends StatelessWidget {
                         fontFamily: 'Jaapokki'),
                   ),
                 ),
-                buildText(theText: '''
+                BuildText(theText: '''
 
   Riwayat hidup
 

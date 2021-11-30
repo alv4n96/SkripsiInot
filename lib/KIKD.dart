@@ -75,7 +75,7 @@ class KIKDAppState extends State<KIKDApp> {
         ),
         body: TabBarView(
           children: <Widget>[
-            buildText(theText: '''
+            BuildText(theText: '''
     
 1.	Menghayati dan mengamalkan ajaran agama yang dianut.
     
@@ -85,7 +85,7 @@ class KIKDAppState extends State<KIKDApp> {
     
 4.	Mengolah, menalar, dan menyaji dalam ranah konkret dan ranah abstrak terkait dengan pengembangan dari yang dipelajarinya di sekolah secara mandiri, bertindak secara efektif dan kreatif, serta mampu menggunakan metode sesuai kaidah keilmuan.
             '''),
-            buildText(theText: '''
+            BuildText(theText: '''
 
 3.6. Menganalisis pengaruh Perang Dunia I dan Perang Dunia II terhadap kehidupan politik global (LBB dan PBB) dalam bentuk tulisan dan/atau media lain.
 

@@ -10,7 +10,7 @@ class adolfHitler extends StatelessWidget {
           child: CustomScrollView(
             slivers: <Widget>[
               SliverAppBar(
-                backgroundColor: Colors.blue,
+                backgroundColor: Colors.blueAccent,
                 expandedHeight: MediaQuery.of(context).size.height * 0.5,
                 flexibleSpace: Container(
                   height: MediaQuery.of(context).size.height * 0.5,
@@ -31,14 +31,15 @@ class adolfHitler extends StatelessWidget {
                       ),
                       Align(
                         child: Container(
-                          alignment: Alignment.bottomCenter,
+                          alignment: Alignment.center,
                           margin: EdgeInsets.only(top: 70),
                           width: 172,
                           decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(10),
                               image: DecorationImage(
                                   image: AssetImage(
-                                      "src/img/mainScreen/bannerHero/1.jpg"))),
+                                "src/img/mainScreen/bannerHero/1.jpg",
+                              ))),
                         ),
                       )
                     ],
@@ -60,7 +61,7 @@ class adolfHitler extends StatelessWidget {
                         fontFamily: 'Jaapokki'),
                   ),
                 ),
-                buildText(theText: '''
+                BuildText(theText: '''
 
   Riwayat Hidup:
 

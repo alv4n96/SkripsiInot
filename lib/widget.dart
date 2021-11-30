@@ -18,7 +18,7 @@ class MenuButton extends StatelessWidget {
       padding: EdgeInsets.fromLTRB(20, 10, 20, 10),
       child: SizedBox(
         width: this.screenWidth,
-        height: 60,
+        height: 80,
         child: ElevatedButton(
           onPressed: () {
             //right way: use context in below level tree with MaterialApp
@@ -156,31 +156,131 @@ class _RRectanglePainterColor extends BoxPainter {
   }
 }
 
-class buildText extends StatelessWidget {
+class BuildText extends StatelessWidget {
   final String theText;
 
-  const buildText({
+  const BuildText({
     Key key,
     @required this.theText,
   }) : super(key: key);
   @override
   Widget build(BuildContext context) {
+    var screenWidht = MediaQuery.of(context).size.width;
+
     return SingleChildScrollView(
       scrollDirection: Axis.vertical,
       child: Container(
-        // height: 300,
-        // color: Colors.blue,
         child: Padding(
-          padding: EdgeInsets.only(left: 25, bottom: 25, right: 25),
-          child: Text(
-            this.theText,
-            style: TextStyle(
-              fontSize: 15,
-              fontWeight: FontWeight.w500,
-              color: Colors.black87,
-              letterSpacing: 1.5,
-            ),
+          padding:
+              const EdgeInsets.only(top: 15, left: 10, right: 10, bottom: 5),
+          child: Container(
+            child: Column(children: <Widget>[
+              Container(
+                width: screenWidht / 0.8,
+                child: Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Text(
+                    this.theText,
+                    style: TextStyle(
+                      fontSize: 15,
+                      fontWeight: FontWeight.w500,
+                      color: Colors.black87,
+                      letterSpacing: 1.5,
+                    ),
+                  ),
+                ),
+              ),
+            ]),
           ),
+        ),
+        decoration: BoxDecoration(
+          color: Colors.white,
+          borderRadius: BorderRadius.only(
+              topLeft: Radius.circular(10),
+              topRight: Radius.circular(10),
+              bottomLeft: Radius.circular(10),
+              bottomRight: Radius.circular(10)),
+          boxShadow: [
+            BoxShadow(
+              color: Colors.grey.withOpacity(0.5),
+              spreadRadius: 5,
+              blurRadius: 7,
+              offset: Offset(0, 3), // changes position of shadow
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+class PictBuilder extends StatelessWidget {
+  final String image;
+  final String label;
+
+  const PictBuilder({
+    Key key,
+    @required this.image,
+    @required this.label,
+  }) : super(key: key);
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.all(10.0),
+      child: SizedBox(
+        // width: 250,
+        // height: 350,
+        child: Column(
+          children: <Widget>[
+            Container(
+              padding: const EdgeInsets.all(5.0),
+              alignment: Alignment.bottomCenter,
+              child: Column(
+                children: [
+                  ClipRRect(
+                    borderRadius: BorderRadius.all(Radius.circular(20.0)),
+                    child: Image.asset(
+                      this.image,
+                      height: 250,
+                      fit: BoxFit.fitHeight,
+                    ),
+                  ),
+                  Container(
+                    child: Padding(
+                      padding: const EdgeInsets.only(top: 10),
+                      child: Text(
+                        this.label,
+                        textAlign: TextAlign.center,
+                        style: TextStyle(
+                          fontFamily: 'Jaapokki',
+                          fontSize: 15,
+                          fontWeight: FontWeight.w500,
+                          color: Colors.black87,
+                          letterSpacing: 1,
+                        ),
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+              decoration: BoxDecoration(
+                color: Colors.white,
+                borderRadius: BorderRadius.only(
+                    topLeft: Radius.circular(10),
+                    topRight: Radius.circular(10),
+                    bottomLeft: Radius.circular(10),
+                    bottomRight: Radius.circular(10)),
+                boxShadow: [
+                  BoxShadow(
+                    color: Colors.grey.withOpacity(0.5),
+                    spreadRadius: 5,
+                    blurRadius: 7,
+                    offset: Offset(0, 3), // changes position of shadow
+                  ),
+                ],
+              ),
+            ),
+          ],
         ),
       ),
     );

@@ -3,6 +3,7 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:skripsi_toni/KIKD.dart';
 import 'package:skripsi_toni/bibliography.dart';
+import 'package:skripsi_toni/gallery.dart';
 import 'package:skripsi_toni/heroScreen/2.dart';
 import 'package:skripsi_toni/heroScreen/3.dart';
 import 'package:skripsi_toni/heroScreen/4.dart';
@@ -113,7 +114,7 @@ class MainScreen extends StatelessWidget {
                   MenuButton(
                     label: "GALERI",
                     screenWidth: screenWidht,
-                    targetScene: MyApp(),
+                    targetScene: galleryApp(),
                   ),
                   MenuButton(
                     label: "DAFTAR PUSTAKA",

@@ -60,7 +60,7 @@ class benitoMussolini extends StatelessWidget {
                         fontFamily: 'Jaapokki'),
                   ),
                 ),
-                buildText(theText: '''
+                BuildText(theText: '''
 
   Riwayat hidup
 
