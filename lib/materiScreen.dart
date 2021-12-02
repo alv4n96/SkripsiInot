@@ -32,31 +32,26 @@ class materiScreen extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: <Widget>[
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: <Widget>[
-                      Padding(
-                        padding: const EdgeInsets.fromLTRB(10, 5, 10, 2),
-                        child: Container(
-                          height: 60,
-                          width: 60,
-                          child: Image(
-                              image: AssetImage(
-                                  "src/img/mainScreen/header/logo.png")),
-                        ),
+                  Padding(
+                    padding: const EdgeInsets.only(bottom: 25),
+                    child: AppBar(
+                      leading: new IconButton(
+                        icon:
+                            new Icon(Icons.arrow_back_ios, color: Colors.white),
+                        onPressed: () => Navigator.of(context).pop(),
                       ),
-                      Padding(
-                        padding: EdgeInsets.only(right: 20),
-                        child: Container(
-                          height: 60,
-                          width: 60,
-                          child: Image(
-                            image:
-                                AssetImage("src/img/landingPage/logo_UM.png"),
-                          ),
-                        ),
-                      )
-                    ],
+                      centerTitle: true,
+                      backgroundColor: Colors.blue.shade900,
+                      title: Text(
+                        "Materi",
+                        style: TextStyle(
+                            fontSize: 25,
+                            fontWeight: FontWeight.bold,
+                            fontFamily: 'Jaapokki',
+                            letterSpacing: 5,
+                            color: Colors.white),
+                      ),
+                    ),
                   ),
                   MateriButton(
                     label: "LATAR BELAKANG PERANG DUNIA II",
@@ -77,11 +72,6 @@ class materiScreen extends StatelessWidget {
                     label: "LAHIRNYA PERSERIKATAN BANGSA BANGSA (PBB)",
                     screenWidth: screenWidht,
                     targetScene: materi4(),
-                  ),
-                  MateriButton(
-                    label: "KEMBALI",
-                    screenWidth: screenWidht,
-                    targetScene: MainScreen(),
                   ),
                 ],
               ),

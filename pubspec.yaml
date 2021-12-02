@@ -55,6 +55,7 @@ flutter:
     - src/img/
     - src/img/gallery/
     - src/img/materi/
+    - src/img/flag/
 
 
   # An image asset can refer to one or more resolution-specific "variants", see

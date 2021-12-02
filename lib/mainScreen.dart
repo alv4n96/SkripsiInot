@@ -1,21 +1,25 @@
-import 'dart:convert';
-
 import 'package:flutter/material.dart';
 import 'package:skripsi_toni/KIKD.dart';
 import 'package:skripsi_toni/bibliography.dart';
 import 'package:skripsi_toni/gallery.dart';
+import 'package:skripsi_toni/instructionScreen.dart';
+import 'package:skripsi_toni/materiScreen.dart';
+
 import 'package:skripsi_toni/heroScreen/2.dart';
 import 'package:skripsi_toni/heroScreen/3.dart';
 import 'package:skripsi_toni/heroScreen/4.dart';
 import 'package:skripsi_toni/heroScreen/5.dart';
 import 'package:skripsi_toni/heroScreen/6.dart';
-import 'package:skripsi_toni/main.dart';
-import 'package:skripsi_toni/instructionScreen.dart';
-import 'package:skripsi_toni/materiScreen.dart';
 import 'package:skripsi_toni/widget.dart';
 import 'package:skripsi_toni/heroScreen/1.dart';
 
-class MainScreen extends StatelessWidget {
+class MainScreen extends StatefulWidget {
+  @override
+  _MainScreenState createState() => _MainScreenState();
+}
+
+class _MainScreenState extends State<MainScreen> {
+  final GlobalKey<ScaffoldState> _scaffoldKey = new GlobalKey<ScaffoldState>();
   @override
   Widget build(BuildContext context) {
     var screenHeight = MediaQuery.of(context).size.height;
@@ -24,6 +28,10 @@ class MainScreen extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
+        key: _scaffoldKey,
+        drawer: Drawer(
+          child: NavigationDrawerWidget(),
+        ),
         body: Container(
           decoration: BoxDecoration(
             image: DecorationImage(
@@ -40,15 +48,17 @@ class MainScreen extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: <Widget>[
                       Padding(
-                        padding: const EdgeInsets.fromLTRB(10, 5, 10, 2),
-                        child: Container(
-                          height: 60,
-                          width: 60,
-                          child: Image(
-                              image: AssetImage(
-                                  "src/img/mainScreen/header/logo.png")),
-                        ),
-                      ),
+                          padding: const EdgeInsets.fromLTRB(10, 5, 10, 2),
+                          child: GestureDetector(
+                            onTap: () => _scaffoldKey.currentState.openDrawer(),
+                            child: Container(
+                              height: 60,
+                              width: 60,
+                              child: Image(
+                                  image: AssetImage(
+                                      "src/img/mainScreen/header/logo.png")),
+                            ),
+                          )),
                       Padding(
                         padding: EdgeInsets.only(right: 20),
                         child: Container(

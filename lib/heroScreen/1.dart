@@ -4,65 +4,46 @@ import 'package:skripsi_toni/widget.dart';
 class adolfHitler extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    var screenWidht = MediaQuery.of(context).size.width;
+
     return Scaffold(
       body: SafeArea(
-        child: Container(
-          child: CustomScrollView(
-            slivers: <Widget>[
-              SliverAppBar(
-                backgroundColor: Colors.blueAccent,
-                expandedHeight: MediaQuery.of(context).size.height * 0.5,
-                flexibleSpace: Container(
-                  height: MediaQuery.of(context).size.height * 0.5,
-                  color: Colors.blue,
-                  child: Stack(
-                    children: <Widget>[
-                      Positioned(
-                        top: 10,
-                        left: 13,
-                        height: 35,
-                        child: Container(
-                          width: 32,
-                          height: 32,
-                          decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(5),
-                              color: Colors.blue.shade300),
-                        ),
-                      ),
-                      Align(
-                        child: Container(
-                          alignment: Alignment.center,
-                          margin: EdgeInsets.only(top: 70),
-                          width: 172,
-                          decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(10),
-                              image: DecorationImage(
-                                  image: AssetImage(
-                                "src/img/mainScreen/bannerHero/1.jpg",
-                              ))),
-                        ),
-                      )
-                    ],
-                  ),
+        child: ListView(
+          children: [
+            AppBar(
+              centerTitle: true,
+              backgroundColor: Colors.redAccent[700],
+              title: Text(
+                "Adolft Hitler",
+                textAlign: TextAlign.center,
+              ),
+            ),
+            Container(
+              child: ClipRRect(
+                child: Image.asset(
+                  "src/img/flag/1.jpg",
+                  width: screenWidht,
+                  fit: BoxFit.fitHeight,
                 ),
               ),
-              SliverList(
-                  delegate: SliverChildListDelegate(<Widget>[
-                // Judul
-                Padding(
-                  padding: EdgeInsets.only(top: 24, left: 25),
-                  // TITLE
-                  child: Text(
-                    '''Adolf Hitler''',
-                    style: TextStyle(
-                        fontSize: 30,
-                        color: Colors.black,
-                        // fontWeight: FontWeight.w600,
-                        fontFamily: 'Jaapokki'),
-                  ),
+            ),
+            Padding(
+              padding: EdgeInsets.only(top: 24, left: 25),
+              // TITLE
+              child: Padding(
+                padding: const EdgeInsets.only(bottom: 25),
+                child: Text(
+                  '''Adolf Hitler''',
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                      fontSize: 30,
+                      color: Colors.black,
+                      // fontWeight: FontWeight.w600,
+                      fontFamily: 'Jaapokki'),
                 ),
-                BuildText(theText: '''
-
+              ),
+            ),
+            BuildText(theText: '''
   Riwayat Hidup:
 
 •	Lahir, Braunau, Austria 20 April 1889
@@ -88,12 +69,9 @@ class adolfHitler extends StatelessWidget {
 •	1944, kepercayaan tentara pada Hitler hilang dan diadakan percobaan pembunuhan
 
 •	1945, kematian Adolf Hitler didalam bunker beserta keluarganya, menteri luar negerinya Goebles, istri dan anak-anak mereka (Agustinus, 2004:90)
-
-
-
-
-
-Berita
+'''),
+            BuildText(theText: '''
+    Berita
 
 	Hitler menjadi dictator Jerman setelah Presiden Von Hindenburg meninggal. Hitler menyatukan jabatan kanselir dan presiden menjadi Führer sekaligus menjadikan Nazi sebagai partai tunggal di Jerman (Siboro,2012:127)
 
@@ -102,12 +80,8 @@ Berita
 	Kebijakan dalam bidang ekonomi, yang dilakukan Hitler dikenal dengan rencana empat tahun (Four Year Plan) (Siboro, 2007:129)
 
 	Penyerangan ke Stalingard meupakan awal kekalahan Jerman di bawah kepemimpinan Hitler, dikarenakan banyaknya pasukan Jerman yang mati sia-sia. 200 ribu serdadu bertempur di Stalingard adalah yang terbaik dari seluruh tentara Jerman. Perlahan tapi pasti Soviet mengalahkan kekaisaran Hitler seraya menuju Berlin (Montefiore Dkk, 2007:217)
-
 ''')
-                // content
-              ]))
-            ],
-          ),
+          ],
         ),
       ),
     );
